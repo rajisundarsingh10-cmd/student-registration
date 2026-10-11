@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Registration</h2>
+
+    <label>Student Name:</label>
+    <input type="text" id="name" placeholder="Enter student name">
+
+    <label>Register Number:</label>
+    <input type="text" id="regno" placeholder="Enter register number">
+
+    <label>Department:</label>
+    <select id="department">
+        <option value="">Select Department</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Computer Science Engineering">Computer Science Engineering</option>
+        <option value="Electronics and Communication Engineering">ECE</option>
+        <option value="Electrical and Electronics Engineering">EEE</option>
+    </select>
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter email">
+
+    <button onclick="registerStudent()">Register Student</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+function registerStudent() {
+
+    let name = document.getElementById("name").value;
+    let regno = document.getElementById("regno").value;
+    let department = document.getElementById("department").value;
+    let email = document.getElementById("email").value;
+
+    if (name == "" || regno == "" || department == "" || email == "") {
+        alert("Please fill all the fields");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h3>Student Details</h3>" +
+        "<p><b>Name:</b> " + name + "</p>" +
+        "<p><b>Register Number:</b> " + regno + "</p>" +
+        "<p><b>Department:</b> " + department + "</p>" +
+        "<p><b>Email:</b> " + email + "</p>";
+}
+</script>
+
+</body>
+</html>
